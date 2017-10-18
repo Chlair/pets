@@ -1,0 +1,67 @@
+<html>
+<title> scope </title>
+
+<script>
+  var assert = function (value, desc) {
+    value ? console.log(desc) : console.error(desc);
+  }
+
+  /* scope */
+  
+  assert(true, '--------------BEFORE OUTER ----------');
+
+  assert(typeof outer === 'function', 'outer is in scope');
+  assert(typeof inner === 'function', 'inner is in scope');
+  assert(typeof a === 'number', 'a is in scope');
+  assert(typeof b === 'number', 'b is in scope');
+  assert(typeof c === 'number', 'c is in scope');
+
+  function outer() {
+    assert(true, '--------------- OUTER BEGINS ---------------------');
+
+    assert(typeof outer === 'function', 'outer is in scope');
+    assert(typeof inner === 'function', 'inner is in scope');
+    assert(typeof a === 'number', 'a is in scope');
+    assert(typeof b === 'number', 'b is in scope');
+    assert(typeof c === 'number', 'c is in scope');
+
+    assert(true, '--------------- BEFOR A -------------------');
+    var a = 1;
+    assert(true, '--------------- INSIDE OUTER AFTER A BEFORE inner() -------------------');
+
+    assert(typeof outer === 'function', 'outer is in scope');
+    assert(typeof inner === 'function', 'inner is in scope');
+    assert(typeof a === 'number', 'a is in scope');
+    assert(typeof b === 'number', 'b is in scope');
+    assert(typeof c === 'number', 'c is in scope');
+
+
+    function inner() {}
+
+    assert(true, '--------------- INSIDE OUTER AFTER inner() BEFORE B -------------------');
+
+    var b = 2;
+    assert(typeof outer === 'function', 'outer is in scope');
+    assert(typeof inner === 'function', 'inner is in scope');
+    assert(typeof a === 'number', 'a is in scope');
+    assert(typeof b === 'number', 'b is in scope');
+    assert(typeof c === 'number', 'c is in scope');
+
+    assert(true, '--------------- INSIDE OUTER AFTER inner() AND B -------------------');
+
+    if(a === 1) {
+      assert(true, '---------------- INSIDE OUTER INSIDE IF------------------------------');
+      var c = 3;
+    }
+    assert(true, '---------------  OUTSID IF -----------------------');
+    assert(true, '---------------  OUTER ENDS -----------------------');
+  }
+
+  outer();
+
+  assert(true, '------------AFTER OUTER -----------------');
+
+</script>
+<body>
+</body>
+</html>

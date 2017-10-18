@@ -1,0 +1,25 @@
+{
+  "name": "colorify",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "assert": "*"
+  },
+  "dependencies": {
+    "jquery": "^1.9.2"
+  },
+  "repository": "git://github.com/hxy/colorify.git",
+  "keywords": [
+    "color"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "huxiaoyue",
+    "email": "huxiaoyue@meituan.com"
+  },
+  "bugs": {
+    "url": "http://github.com/hxy/colorify/issues"
+  },
+  "homepage": "http://github.com/hxy/colorify"
+}

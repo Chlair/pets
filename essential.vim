@@ -1,0 +1,1 @@
+set nocompatbiletype plugin on

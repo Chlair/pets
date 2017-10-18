@@ -1,0 +1,5 @@
+# 资料
+1. key method :
+https://github.com/facebook/react/blob/master/src/renderers/shared/stack/reconciler/ReactCompositeComponent.js#L874
+https://github.com/facebook/react/blob/master/src/renderers/shared/stack/reconciler/instantiateReactComponent.js
+https://github.com/facebook/react/blob/master/src/renderers/shared/stack/reconciler/Transaction.js

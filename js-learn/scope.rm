@@ -1,0 +1,23 @@
+# scope 图解
+
+## 1
+**ESCstack**
+--------------------
+|                  |
+--------------------
+|                  |
+--------------------
+|(1) globalContext |
+--------------------
+
+      -------------
+(1) = | 1) --> 2) |
+      -------------
+```
+1) globalContext = {
+    VO: [global, scope, checkscope],
+    Scope: [globalContext.VO],
+    this: globalContext.VO
+}
+```
+2) checkscope = [globalcontext.VO];
